@@ -1,27 +1,40 @@
-import psutil
-from datetime import datetime
-import csv
+import sqlite3
+import pandas as pd
+import smtplib
+from email.mime.text import MIMEText
 import os
-import time
 
-def get_system_info():
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-    
-    # TODO: Get CPU, memory, and disk usage using psutil
-    cpu = 
-    memory = 
-    disk = 
-    
-    return [now, cpu, memory, disk]
+DB_NAME = "log.db"
 
-def write_log(data):
-    file_exists = os.path.isfile("log.csv")
-    with open("log.csv", "a", newline='') as f:
-        writer = csv.writer(f)
-        if not file_exists:
-            writer.writerow(["Timestamp", "CPU", "Memory", "Disk"])
-        writer.writerow(data)
+# TODO: Define your bonus features here
+# Example 1: Calculate how many times CPU > 80%
+# Example 2: Send alert email if CPU > 90%
+# Example 3: Generate text summary report with top 3 CPU peaks
+
+def load_data():
+    if not os.path.exists(DB_NAME):
+        print("Database not found. Please ensure log.db exists.")
+        return None
+    conn = sqlite3.connect(DB_NAME)
+    df = pd.read_sql_query("SELECT * FROM system_log", conn)
+    conn.close()
+    return df
+
+def count_high_cpu(df):
+    # TODO: Count entries with CPU usage above threshold
+    pass
+
+def generate_summary(df):
+    # TODO: Generate text-based summary (average, max, etc.)
+    pass
+
+def send_email_alert(message):
+    # TODO: Send a test email (optional)
+    # Hint: use smtplib or just print to console for simulation
+    pass
 
 if __name__ == "__main__":
-    # TODO: Repeat the log process 5 times with 10-second intervals
-    pass
+    df = load_data()
+    if df is not None:
+        # TODO: Call your custom features
+        pass
