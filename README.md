@@ -20,10 +20,15 @@ to your monitoring system. Choose at least one enhancement to implement.
 
  **System Summary**
 Total Records: 120
+
 Average CPU Usage: 31.45%
+
 Maximum CPU Usage: 95.2%
+
 Network DOWN count: 4
+
 Top 3 CPU Peaks: [95.2, 93.6, 90.1]
+
 ⚠️ ALERT: 2 records exceeded 90% CPU usage.
 
 ---
