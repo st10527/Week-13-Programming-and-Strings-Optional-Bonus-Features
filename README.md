@@ -18,7 +18,7 @@ to your monitoring system. Choose at least one enhancement to implement.
 
 ## Example Output
 
-===== System Summary =====
+ **System Summary**
 Total Records: 120
 Average CPU Usage: 31.45%
 Maximum CPU Usage: 95.2%
