@@ -1,60 +1,44 @@
-# Week 4 – Scheduled Logging (Looped Logging with Delay)
+# Week 13 – Programming & Strings: Optional Bonus Features
 
 ## Objective
 
-Enhance your existing logging script by introducing **automation**.  
-Instead of logging system info once per execution, you will now log **multiple times automatically**, with a delay between each log.
+This week, you’ll use your programming and string manipulation skills to add **bonus features**  
+to your monitoring system. Choose at least one enhancement to implement.
 
 ---
 
-## Tasks
+## Suggested Features (Pick 1–2)
 
-1. Collect system resource usage:
-   - Timestamp
-   - CPU (%)
-   - Memory (%)
-   - Disk (%)
-
-2. Write each log entry to `log.csv` in the same format as Week 3.
-
-3. Add a loop to:
-   - Repeat the logging process **5 times**
-   - Wait **10 seconds** between each entry
-
-4. Each run of the script should add **5 new rows** to `log.csv`.
+1. Count how many times CPU > 80% and display in console  
+2. Generate a **text summary report** showing key metrics (average, max, peaks)  
+3. (Optional) Simulate sending an email alert when CPU > 90%  
+4. (Optional) Save your summary as `summary.txt`  
 
 ---
 
-## Tools to Use
+## Example Output
 
-- `psutil` for system info  
-- `datetime` for timestamps  
-- `csv` module for writing  
-- `time.sleep()` for delays  
-- `for` loop to repeat logging
+===== System Summary =====
+Total Records: 120
+Average CPU Usage: 31.45%
+Maximum CPU Usage: 95.2%
+Network DOWN count: 4
+Top 3 CPU Peaks: [95.2, 93.6, 90.1]
+⚠️ ALERT: 2 records exceeded 90% CPU usage.
 
----
-
-## Example Output in `log.csv`
-Timestamp,CPU,Memory,Disk
-2025-09-21 14:00:01,18.2,40.3,58.7
-2025-09-21 14:00:11,20.4,42.5,58.9
-2025-09-21 14:00:21,21.1,43.8,59.0
-…
 ---
 
 ## Submission Checklist
 
-- [ ] `main.py` includes loop and delay logic  
-- [ ] `log.csv` contains at least 5 new entries  
-- [ ] Code committed and pushed to GitHub  
-- [ ] Screenshot of either terminal or `log.csv` included in the repo
+- [ ] At least one bonus feature implemented  
+- [ ] Output printed in console or written to a file  
+- [ ] Screenshot or log output included  
+- [ ] Code committed and pushed to GitHub
 
 ---
 
-## Suggested Commit Message
+## Bonus (Optional)
 
-```bash
-git add .
-git commit -m "Add scheduled logging (Week 4)"
-git push
+- Simulate email notification (use `smtplib` or console print)
+- Add alert history table into `log.db`
+- Create a simple summary text file (`summary.txt`)
